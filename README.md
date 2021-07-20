@@ -79,3 +79,92 @@
 
 </p>
 </details>
+
+<details>
+<summary>2. Shows with language other than 'English'</summary>
+<p>
+
+```console
+> db.shows.find({"language": {$ne: "English"}})
+```
+
+</p>
+</details>
+
+<details>
+<summary>3. Shows with language other than 'English' & type 'Animation' </summary>
+<p>
+
+```console
+> db.shows.find({"language":{$ne:"English"}, "type":"Animation" })
+```
+
+</p>
+</details>
+
+<details>
+<summary>4. 'Horror' show names that plays on 'Sunday' </summary>
+<p>
+
+```console
+> db.shows.find({"schedule.days":"Sunday"},{name:1})
+```
+
+</p>
+</details>
+
+<details>
+<summary>5. Distinct 'webChannel.name' from all shows</summary>
+<p>
+
+```console
+> db.shows.aggregate([{$group:{_id:"$webChannel.name"}}])
+```
+
+</p>
+</details>
+
+<details>
+<summary>6. Distinct country codes</summary>
+<p>
+
+```console
+> db.shows.aggregate([{$group:{_id:"$network.country.code"}}])
+```
+
+</p>
+</details>
+
+<details>
+<summary>7. All running shows in US</summary>
+<p>
+
+```console
+> db.shows.find({status: "Running", "network.country.code": "US"})
+```
+
+</p>
+</details>
+
+<details>
+<summary>8. Thrillers @sunday 22:00 hrs with minimum rating 5, show time, name and rating only</summary>
+<p>
+
+```console
+> db.shows.find(
+	{
+		"rating.average": {$gte: 5},
+		genres: "Thriller",
+		"schedule.days": "Sunday",
+		"schedule.time": {$gte: "22:00"}
+	},
+	{
+		"schedule.time": 1,
+		name: 1,
+		"rating.average": 1
+	}
+)
+```
+
+</p>
+</details>
