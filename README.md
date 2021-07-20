@@ -1,5 +1,6 @@
-Sample document
-
+<details>
+	<summary>Sample document</summary>
+	
 ```bson
 {
 	"_id" : ObjectId("60f6ddee24e687c0ca03f581"),
@@ -66,3 +67,15 @@ Sample document
 	}
 }
 ```
+</details>
+
+<details>
+<summary>1. Shows with average rating more than 9.3</summary>
+<p>
+
+```console
+> db.shows.find({"rating.average": {$gt: 9.3}})
+```
+
+</p>
+</details>
