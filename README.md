@@ -176,3 +176,14 @@
 
 </p>
 </details>
+
+<details>
+<summary>10. Name of the past comedy shows with rating below 5.</summary>
+<p>
+
+```console
+> db.shows.find({status: "Ended", "rating.average": {$lt: 5}, genres: "Comedy"}, {name: 1})
+```
+
+</p>
+</details>
