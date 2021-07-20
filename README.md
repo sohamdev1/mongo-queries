@@ -92,11 +92,11 @@
 </details>
 
 <details>
-<summary>3. Shows with language other than 'English' & type 'Animation' </summary>
+<summary>3. English animation shows.</summary>
 <p>
 
 ```console
-> db.shows.find({"language":{$ne:"English"}, "type":"Animation" })
+> db.shows.find({language: "English", type: "Animation" })
 ```
 
 </p>
