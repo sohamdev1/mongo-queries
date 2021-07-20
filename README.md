@@ -103,7 +103,7 @@
 </details>
 
 <details>
-<summary>4. 'Horror' shows that plays on Sunday </summary>
+<summary>4. Horror shows that plays on Sunday </summary>
 <p>
 
 ```console
