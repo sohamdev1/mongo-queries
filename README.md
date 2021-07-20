@@ -147,23 +147,20 @@
 </details>
 
 <details>
-<summary>8. Thrillers @sunday 22:00 hrs with minimum rating 5, show time, name and rating only</summary>
+<summary>8. Thrillers @sunday 22:00 hrs with minimum rating 5. Show time, name and rating only.</summary>
 <p>
 
 ```console
-> db.shows.find(
-	{
-		"rating.average": {$gte: 5},
-		genres: "Thriller",
-		"schedule.days": "Sunday",
-		"schedule.time": {$gte: "22:00"}
-	},
-	{
-		"schedule.time": 1,
-		name: 1,
-		"rating.average": 1
-	}
-)
+> db.shows.find({
+	"rating.average": {$gte: 5},
+	genres: "Thriller",
+	"schedule.days": "Sunday",
+	"schedule.time": {$gte: "22:00"}
+}, {
+	"schedule.time": 1,
+	name: 1,
+	"rating.average": 1
+})
 ```
 
 </p>
