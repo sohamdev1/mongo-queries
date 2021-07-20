@@ -167,11 +167,11 @@
 </details>
 
 <details>
-<summary>9. 2 most recent Japanese shows.</summary>
+<summary>9. 2 most recent Japanese shows with maximum 1 hour runtime.</summary>
 <p>
 
 ```console
-> db.shows.find({language: "Japanese"}).sort({updated: -1}).limit(2)
+> db.shows.find({language: "Japanese", runtime: {$lte: 60}}).sort({updated: -1}).limit(2)
 ```
 
 </p>
