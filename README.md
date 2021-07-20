@@ -103,7 +103,7 @@
 </details>
 
 <details>
-<summary>4. 'Horror' show names that plays on 'Sunday' </summary>
+<summary>4. 'Horror' shows that plays on Sunday </summary>
 <p>
 
 ```console
@@ -114,7 +114,7 @@
 </details>
 
 <details>
-<summary>5. Distinct 'webChannel.name' from all shows</summary>
+<summary>5. Distinct web-channels of all shows</summary>
 <p>
 
 ```console
